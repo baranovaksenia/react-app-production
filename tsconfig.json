@@ -1,0 +1,41 @@
+{
+	// TypeScript Compiler Options
+	"compilerOptions": {
+		// Output directory for compiled files
+		"outDir": "./dist/",
+
+		// Ensure variables have explicit types
+		"noImplicitAny": true,
+
+		// Compile to ES5 for broader browser compatibility
+		"target": "es5",
+
+		// Module system for import support
+		"module": "ESNext",
+
+		// Allow JavaScript files in the project
+		"allowJs": true,
+		"baseUrl": ".",
+
+		// Specify JSX as React for proper compilation
+		"jsx": "react",
+
+		// Module resolution strategy for import statements
+		"moduleResolution": "node",
+
+		// Enable ES module interop for compatibility with CommonJS
+		"esModuleInterop": true,
+
+		// Allow importing React without the need for * as React
+		"allowSyntheticDefaultImports": true
+	},
+
+	// TypeScript Node Configuration
+	"ts-node": {
+		// Compiler options for ts-node
+		"compilerOptions": {
+			// Use CommonJS module system
+			"module": "CommonJS"
+		}
+	}
+}
