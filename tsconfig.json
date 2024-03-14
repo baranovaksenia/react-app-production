@@ -18,7 +18,7 @@
 		// "baseUrl": ".",
 
 		// Specify JSX as React for proper compilation
-		"jsx": "react",
+		"jsx": "react-jsx",
 
 		// Module resolution strategy for import statements
 		"moduleResolution": "node",
