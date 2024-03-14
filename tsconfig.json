@@ -15,7 +15,7 @@
 
 		// Allow JavaScript files in the project
 		"allowJs": true,
-		"baseUrl": ".",
+		// "baseUrl": ".",
 
 		// Specify JSX as React for proper compilation
 		"jsx": "react",
