@@ -1,40 +1,37 @@
 {
-	// TypeScript Compiler Options
 	"compilerOptions": {
-		// Output directory for compiled files
 		"outDir": "./dist/",
-
-		// Ensure variables have explicit types
+		// Подсвечивает все места где не указан тип
+		// Однако это не означает, что теперь вовсе нельзя использовать any.
+		// Это означает лишь, что в подобных ситуация разработчик должен явно писать any,
 		"noImplicitAny": true,
-
-		// Compile to ES5 for broader browser compatibility
+		"module": "es6",
+		// В какую спецификацию компилируем: для поддержки большинства браузеров
 		"target": "es5",
-
-		// Module system for import support
-		"module": "ESNext",
-
-		// Allow JavaScript files in the project
-		"allowJs": true,
-		// "baseUrl": ".",
-
-		// Specify JSX as React for proper compilation
 		"jsx": "react-jsx",
-
-		// Module resolution strategy for import statements
+		// Компилятор будет обрабатывать не только TS файлы, но и JS файлы
+		"allowJs": true,
 		"moduleResolution": "node",
-
-		// Enable ES module interop for compatibility with CommonJS
+		// Для абсолютного импорта
+		"baseUrl": ".",
+		// esModuleInterop позволяет работать с пакетами, которые используют
+		// common js как с обычными пакета с помощью import (require() module.export) = common js
+		// import Moment from 'moment';
+		// без флага esModuleInterop результат undefined
+		// console.log(Moment);
+		// c флагом результат [object Object]
+		// console.log(Moment);
 		"esModuleInterop": true,
-
-		// Allow importing React without the need for * as React
+		// Если какая-либо библиотека не имеет default import,
+		// лоадеры вроде ts-loader или babel-loader автоматически создают их
+		// вместо такого импорта
+		// import * as React from 'react';
+		// можно писать такой
+		// import React from 'react';
 		"allowSyntheticDefaultImports": true
 	},
-
-	// TypeScript Node Configuration
 	"ts-node": {
-		// Compiler options for ts-node
 		"compilerOptions": {
-			// Use CommonJS module system
 			"module": "CommonJS"
 		}
 	}

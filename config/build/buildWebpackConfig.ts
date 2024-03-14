@@ -9,18 +9,15 @@ export function buildWebpackConfig(
 	options: BuildOptions
 ): webpack.Configuration {
 	const { paths, mode, isDev } = options
+
 	return {
 		mode: mode,
-		// склеиваем путь к файлу
 		entry: paths.entry,
-		// куда будет собираться проект (название файла и путь)
 		output: {
 			filename: "[name].[contenthash].js",
 			path: paths.build,
-			// оставляем только финальную сборку
 			clean: true,
 		},
-
 		plugins: buildPlugins(options),
 		module: {
 			rules: buildLoaders(),
